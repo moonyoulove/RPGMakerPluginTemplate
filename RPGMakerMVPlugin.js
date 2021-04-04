@@ -6,7 +6,7 @@
  * @target MV MZ
  * @plugindesc
  * @author moonyoulove
- * @url
+ * @url https://github.com/moonyoulove/RPGMakerPlugins
  *
  * @help
  * 
