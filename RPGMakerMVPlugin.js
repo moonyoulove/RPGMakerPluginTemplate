@@ -3,7 +3,7 @@
 //=============================================================================
 
 /*:
- * @target MV MZ
+ * @target #{rm_version}
  * @plugindesc
  * @author moonyoulove
  * @url https://github.com/moonyoulove/RPGMakerPlugins
@@ -47,16 +47,16 @@
  * @type string
  */
 
-class #{classname} {}
-
-#{classname}.pluginName = "#{filename}";
-#{classname}.parameters = PluginManager.parameters(#{classname}.pluginName);
-#{classname}.commands = {};
+var MULI = MULI || {};
+MULI.#{classname} = class {};
+MULI.#{classname}.pluginName = "#{filename}";
+MULI.#{classname}.parameters = PluginManager.parameters(MULI.#{classname}.pluginName);
+MULI.#{classname}.commands = {};
 
 (() => {
-    if (Utils.RPGMAKER_NAME === "MZ") {
-        /* PluginManager.registerCommand(#{classname}.pluginName, "CommandName", function(args) {
-            #{classname}.commands["CommandName"].call(this, Number(args.arg1), Boolean(args.arg2), JSON.parse(args.arg3));
+    if (Utils.RPGMAKER_NAME !== "MV") {
+        /* PluginManager.registerCommand(MULI.#{classname}.pluginName, "CommandName", function(args) {
+            MULI.#{classname}.commands["CommandName"].call(this, Number(args.arg1), args.arg2 === true, JSON.parse(args.arg3));
         }); */
     }
 })();
